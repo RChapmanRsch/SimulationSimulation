@@ -15,9 +15,15 @@
   install.packages("glmnet")
   library(glmnet)
   
-  #smoothing splines??
-
-
+  #ss or sm (depending on number of covariate) for smoothing splines from nate's npreg package
+  install.packages("npreg")
+  library(nprep)
+  
+  #Data Generation Methods:
+  #MASS - generating data from the multivariate normal distribution using the mvrnorm function. 
+  install.packages("MASS")
+  library(MASS)
+  
 
 #simulation conditions
 Conditions=list(
@@ -40,6 +46,18 @@ Conditions=list(
 Conditions=expand.grid(Conditions)
 
 #generate data
+
+# Fed into MVR norm:
+# ---Sample Size (SampleSize)
+# ---Number of Factors (Number_of_Factors + 1)
+# ---Building the interior matrix (Factor_Structure & Percent Unimportant Factors)
+# ---Adjust outcome SD via 'Distribution of Outcomes'
+
+# Post processing of MVR norm output: 
+# ---Factor levels (polychotomizing MVR factor output)
+# ---Distribution of Outcome (polychotomizing MVR Outcome output)
+
+
 
 
 
